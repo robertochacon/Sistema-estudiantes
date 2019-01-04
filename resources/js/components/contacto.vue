@@ -1,0 +1,11 @@
+<template>
+    <h1>Contacto fdf</h1>
+</template>
+
+<script>
+export default {
+    mounted(){
+        console.log('contacto');
+    }    
+}
+</script>

@@ -1,27 +1,6 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
-        <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet"> -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    </head>
-    <body>
-
-  <div id="app">
-    <v-app>
-      <v-content>
-
-            <!-- <personas></personas> -->
-            <!-- <v-btn class="red white--text">
-            <v-icon>folder</v-icon>
-            <span>Archivo</span>
-            </v-btn> -->
-
-            <nav>
-
+<template>
+<div>
+<nav>
 <v-toolbar flat app>
     <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
     <v-toolbar-title class="text-uppercase grey--text">
@@ -62,23 +41,26 @@
     </v-list>
     </div>
 </v-navigation-drawer>
-
 </nav>
 
 
-            <router-view></router-view>
 
+</div>
+</template>
 
-      </v-content>
-    </v-app>
-  </div>
-
-
-
-
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script> -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    </body>
-</html>
+<script>
+export default {
+    el: '#app',
+    data(){
+        return{
+            drawer:false,
+            links:[
+                {icon:'dashboard',color:'red',text:'Dashboard',route:'/'},
+                {icon:'person',color:'yellow',text:'People',route:'/personas'},
+                {icon:'person',color:'purple',text:'Team',route:'/contacto'},
+            ],
+            snackbar:false
+        }
+    }  
+}
+</script>
